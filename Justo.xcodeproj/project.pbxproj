@@ -13,6 +13,11 @@
 		19ACC92D28A411820085EF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ACC92B28A411820085EF80 /* Main.storyboard */; };
 		19ACC92F28A411860085EF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19ACC92E28A411860085EF80 /* Assets.xcassets */; };
 		19ACC93228A411860085EF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ACC93028A411860085EF80 /* LaunchScreen.storyboard */; };
+		19ACC93A28A418690085EF80 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93928A418690085EF80 /* UserCell.swift */; };
+		19ACC93C28A41A980085EF80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93B28A41A980085EF80 /* User.swift */; };
+		19ACC93E28A41C4D0085EF80 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93D28A41C4D0085EF80 /* UserRepository.swift */; };
+		19ACC94028A41CD30085EF80 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93F28A41CD30085EF80 /* ViewModel.swift */; };
+		F97813F478D2B7FDC0D731AA /* Pods_Justo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC69967F3B273E97C8E1245A /* Pods_Justo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,13 @@
 		19ACC92E28A411860085EF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19ACC93128A411860085EF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19ACC93328A411860085EF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19ACC93928A418690085EF80 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		19ACC93B28A41A980085EF80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		19ACC93D28A41C4D0085EF80 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		19ACC93F28A41CD30085EF80 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3DF6574845A352F569A133BD /* Pods-Justo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justo.release.xcconfig"; path = "Target Support Files/Pods-Justo/Pods-Justo.release.xcconfig"; sourceTree = "<group>"; };
+		C41D2A506D64479D40EFFAD4 /* Pods-Justo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justo.debug.xcconfig"; path = "Target Support Files/Pods-Justo/Pods-Justo.debug.xcconfig"; sourceTree = "<group>"; };
+		EC69967F3B273E97C8E1245A /* Pods_Justo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Justo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97813F478D2B7FDC0D731AA /* Pods_Justo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,8 @@
 			children = (
 				19ACC92428A411820085EF80 /* Justo */,
 				19ACC92328A411820085EF80 /* Products */,
+				9DCC04100A534AA548A8A89B /* Pods */,
+				FD39411A192627175EF13110 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +78,29 @@
 				19ACC92E28A411860085EF80 /* Assets.xcassets */,
 				19ACC93028A411860085EF80 /* LaunchScreen.storyboard */,
 				19ACC93328A411860085EF80 /* Info.plist */,
+				19ACC93928A418690085EF80 /* UserCell.swift */,
+				19ACC93B28A41A980085EF80 /* User.swift */,
+				19ACC93D28A41C4D0085EF80 /* UserRepository.swift */,
+				19ACC93F28A41CD30085EF80 /* ViewModel.swift */,
 			);
 			path = Justo;
+			sourceTree = "<group>";
+		};
+		9DCC04100A534AA548A8A89B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C41D2A506D64479D40EFFAD4 /* Pods-Justo.debug.xcconfig */,
+				3DF6574845A352F569A133BD /* Pods-Justo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD39411A192627175EF13110 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC69967F3B273E97C8E1245A /* Pods_Justo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19ACC93628A411860085EF80 /* Build configuration list for PBXNativeTarget "Justo" */;
 			buildPhases = (
+				450FBFA2E3837A28120D7A2A /* [CP] Check Pods Manifest.lock */,
 				19ACC91E28A411820085EF80 /* Sources */,
 				19ACC91F28A411820085EF80 /* Frameworks */,
 				19ACC92028A411820085EF80 /* Resources */,
+				34E548C7C286815EC670ADC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +171,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34E548C7C286815EC670ADC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Justo/Pods-Justo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Justo/Pods-Justo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Justo/Pods-Justo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		450FBFA2E3837A28120D7A2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Justo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19ACC91E28A411820085EF80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19ACC93A28A418690085EF80 /* UserCell.swift in Sources */,
 				19ACC92A28A411820085EF80 /* ViewController.swift in Sources */,
+				19ACC93E28A41C4D0085EF80 /* UserRepository.swift in Sources */,
 				19ACC92628A411820085EF80 /* AppDelegate.swift in Sources */,
+				19ACC93C28A41A980085EF80 /* User.swift in Sources */,
 				19ACC92828A411820085EF80 /* SceneDelegate.swift in Sources */,
+				19ACC94028A41CD30085EF80 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +366,7 @@
 		};
 		19ACC93728A411860085EF80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C41D2A506D64479D40EFFAD4 /* Pods-Justo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +394,7 @@
 		};
 		19ACC93828A411860085EF80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF6574845A352F569A133BD /* Pods-Justo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
