@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import SnapKit
 
-class InfoViewController : UIViewController {
+class InfoView : UIViewController {
     var userInfo: User
     
     override func loadView() {
@@ -27,9 +27,10 @@ class InfoViewController : UIViewController {
         
         let _: UIImageView = {
            let imageView = UIImageView(image: nil)
-            let url = URL(string: userInfo.profilePicLarge)
+           let url = URL(string: userInfo.profilePicLarge)
            imageView.kf.setImage(with: url)
            imageView.contentMode = .scaleAspectFit
+           imageView.layer.cornerRadius = 50.0
            imageView.clipsToBounds = true
            stackView.addArrangedSubview(imageView)
            return imageView
@@ -39,7 +40,7 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Name: \(userInfo.name)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -49,7 +50,7 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Gender: \(userInfo.gender)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -59,7 +60,7 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Email: \(userInfo.email)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -68,9 +69,9 @@ class InfoViewController : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             //////
-            label.text = "DOB: \(userInfo.dob)"
+            label.text = "Country: \(userInfo.country)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -80,7 +81,7 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Age: \(userInfo.age)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -90,7 +91,7 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Phone: \(userInfo.phoneNo)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
@@ -100,22 +101,18 @@ class InfoViewController : UIViewController {
             let label = UILabel()
             label.text = "Cell: \(userInfo.cellNo)"
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
             return label
         }()
     
-        
         view.addSubview(stackView)
-    
         stackView.snp.makeConstraints { (make) in
-            make.top.left.bottom.right.equalToSuperview()
-               
+            make.bottom.right.equalToSuperview()
+            make.top.left.equalToSuperview().offset(20)
         }
     }
-    
-    
     
     init(user: User){
         userInfo = user

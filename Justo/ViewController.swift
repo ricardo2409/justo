@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     let tableView = UITableView()
     var usersArray = [User]()
     let viewModel = ViewModel()
-    let numberOfUsers = 5
+    let numberOfUsers = 6
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,12 @@ class ViewController: UIViewController {
             make.center.width.equalToSuperview()
             make.top.equalTo(view.safeArea.top)
         }
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh")
+        refreshControl.tintColor = UIColor(.blue)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         fetchInfo(numberOfUsers)
+        print("Ya estoy fuera del loooooop")
     }
     
     func fetchInfo(_ numberOfUsers: Int) {
@@ -34,15 +40,25 @@ class ViewController: UIViewController {
                 print("This is user:")
                 print(user)
                 guard let strongSelf = self else { return }
+                print(strongSelf.usersArray.count)
                 strongSelf.displayUser(user)
             }
         }
+        print("Ya estoy fuera del loop")
+        
     }
-    
     
     func displayUser(_ user: User) {
         self.usersArray.append(user)
         self.tableView.reloadData()
+        
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        print("refresh")
+        self.usersArray.removeAll()
+        self.fetchInfo(numberOfUsers)
+        self.refreshControl.endRefreshing()
     }
 }
 
@@ -67,9 +83,10 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = InfoViewController(user: usersArray[indexPath.row])
+        let controller = InfoView(user: usersArray[indexPath.row])
         show(controller, sender: Any?.self)
     }
+    
     
 }
 

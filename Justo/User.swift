@@ -13,7 +13,7 @@ struct User {
     var latitude : String
     var longitude : String
     var email : String
-    var dob : String
+    var country : String
     var age : String
     var phoneNo : String
     var cellNo : String

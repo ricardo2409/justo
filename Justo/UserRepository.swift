@@ -29,13 +29,13 @@ class UserRepository {
                 let latitude = json["results"][0]["location"]["coordinates"]["latitude"].rawValue as! String
                 let longitude = json["results"][0]["location"]["coordinates"]["longitude"].rawValue as! String
                 let email = json["results"][0]["email"].rawValue as! String
-                let dob = json["results"][0]["dob"]["date"].rawValue as! String
+                let country = json["results"][0]["location"]["country"].rawValue as! String
                 let age = String(json["results"][0]["dob"]["age"].rawValue as! Int)
                 let phone = json["results"][0]["phone"].rawValue as! String
                 let cell = json["results"][0]["cell"].rawValue as! String
                 let thumbnail = json["results"][0]["picture"]["medium"].rawValue as! String
                 let large = json["results"][0]["picture"]["large"].rawValue as! String
-                let user = User(name: name, gender: gender, latitude: latitude, longitude: longitude, email: email, dob: dob, age: age, phoneNo: phone, cellNo: cell, profilePicThumbnail: thumbnail, profilePicLarge: large)
+                let user = User(name: name, gender: gender, latitude: latitude, longitude: longitude, email: email, country: country, age: age, phoneNo: phone, cellNo: cell, profilePicThumbnail: thumbnail, profilePicLarge: large)
                
                 completion(user)
                 

@@ -17,7 +17,7 @@
 		19ACC93C28A41A980085EF80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93B28A41A980085EF80 /* User.swift */; };
 		19ACC93E28A41C4D0085EF80 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93D28A41C4D0085EF80 /* UserRepository.swift */; };
 		19ACC94028A41CD30085EF80 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC93F28A41CD30085EF80 /* ViewModel.swift */; };
-		19ACC94428A56FD10085EF80 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC94328A56FD10085EF80 /* InfoViewController.swift */; };
+		19ACC94428A56FD10085EF80 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACC94328A56FD10085EF80 /* InfoView.swift */; };
 		F97813F478D2B7FDC0D731AA /* Pods_Justo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC69967F3B273E97C8E1245A /* Pods_Justo.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		19ACC93B28A41A980085EF80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19ACC93D28A41C4D0085EF80 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		19ACC93F28A41CD30085EF80 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		19ACC94328A56FD10085EF80 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		19ACC94328A56FD10085EF80 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		3DF6574845A352F569A133BD /* Pods-Justo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justo.release.xcconfig"; path = "Target Support Files/Pods-Justo/Pods-Justo.release.xcconfig"; sourceTree = "<group>"; };
 		C41D2A506D64479D40EFFAD4 /* Pods-Justo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justo.debug.xcconfig"; path = "Target Support Files/Pods-Justo/Pods-Justo.debug.xcconfig"; sourceTree = "<group>"; };
 		EC69967F3B273E97C8E1245A /* Pods_Justo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Justo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +84,7 @@
 				19ACC93B28A41A980085EF80 /* User.swift */,
 				19ACC93D28A41C4D0085EF80 /* UserRepository.swift */,
 				19ACC93F28A41CD30085EF80 /* ViewModel.swift */,
-				19ACC94328A56FD10085EF80 /* InfoViewController.swift */,
+				19ACC94328A56FD10085EF80 /* InfoView.swift */,
 			);
 			path = Justo;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 				19ACC92628A411820085EF80 /* AppDelegate.swift in Sources */,
 				19ACC93C28A41A980085EF80 /* User.swift in Sources */,
 				19ACC92828A411820085EF80 /* SceneDelegate.swift in Sources */,
-				19ACC94428A56FD10085EF80 /* InfoViewController.swift in Sources */,
+				19ACC94428A56FD10085EF80 /* InfoView.swift in Sources */,
 				19ACC94028A41CD30085EF80 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BR3P2ZY3G5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Justo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,6 +405,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BR3P2ZY3G5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Justo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
