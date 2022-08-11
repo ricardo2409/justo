@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         
         print("Estoy en display")
         print(user)
-        
+        usersArray.append(user)
         self.tableView.reloadData()
     }
 }

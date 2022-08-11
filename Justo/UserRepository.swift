@@ -20,7 +20,39 @@ class UserRepository {
             switch response.result {
             case.success(let value):
                 let json = JSON(value)
-                print("JSON: \(json.dictionaryValue["results"] ?? "Error al leer")")
+                //Create User
+                print("Name: \(json["results"][0]["name"]["title"]) \(json["results"][0]["name"]["first"]) \(json["results"][0]["name"]["last"])")
+                print("Gender: \(json["results"][0]["gender"])")
+                print("Latitude: \(json["results"][0]["location"]["coordinates"]["latitude"])")
+                print("Longitude: \(json["results"][0]["location"]["coordinates"]["longitude"])")
+                print("Email: \(json["results"][0]["email"])")
+                print("DOB: \(json["results"][0]["dob"]["date"])")
+                print("Age: \(json["results"][0]["dob"]["age"])")
+                print("Phone: \(json["results"][0]["phone"])")
+                print("Cell: \(json["results"][0]["cell"])")
+                print("Thumbnail: \(json["results"][0]["picture"]["thumbnail"])")
+                print("Large: \(json["results"][0]["picture"]["large"])")
+
+                let title = json["results"][0]["name"]["title"].rawValue as! String
+                let first = json["results"][0]["name"]["first"].rawValue as! String
+                let last = json["results"][0]["name"]["last"].rawValue as! String
+                let name = title + " " + first + " " + last
+                let gender = json["results"][0]["gender"].rawValue as! String
+                let latitude = json["results"][0]["location"]["coordinates"]["latitude"].rawValue as! String
+                let longitude = json["results"][0]["location"]["coordinates"]["longitude"].rawValue as! String
+                let email = json["results"][0]["email"].rawValue as! String
+                let dob = json["results"][0]["dob"]["date"].rawValue as! String
+                let age = String(json["results"][0]["dob"]["age"].rawValue as! Int)
+                let phone = json["results"][0]["phone"].rawValue as! String
+                let cell = json["results"][0]["cell"].rawValue as! String
+                let thumbnail = json["results"][0]["picture"]["thumbnail"].rawValue as! String
+                let large = json["results"][0]["picture"]["large"].rawValue as! String
+                
+                let user = User(name: name, gender: gender, latitude: latitude, longitude: longitude, email: email, dob: dob, age: age, phoneNo: phone, cellNo: cell, profilePicThumbnail: thumbnail, profilePicLarge: large)
+               
+                completion(user)
+                
+                
             case.failure(let error):
                 print(error)
             }

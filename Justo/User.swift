@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct User : Decodable{
+struct User {
     var name : String
     var gender : String
-    var location : String
+    var latitude : String
+    var longitude : String
     var email : String
     var dob : String
+    var age : String
     var phoneNo : String
     var cellNo : String
-    var profilePic : String
+    var profilePicThumbnail : String
+    var profilePicLarge : String
     
+    /*
     enum CodingKeys: String, CodingKey {
         case name
         case gender
@@ -25,19 +29,10 @@ struct User : Decodable{
         case dob
         case phoneNo = "phone"
         case cellNo = "cell"
-        case profilePic = "picture"
-    }
-   
-    /*
-    init(dict : Dictionary<String, Any?>) {
-        name = Name(dict: dict["name"] as! Dictionary<String, String>)
-        gender = Gender.parse(rawValue: dict["gender"] as! String) ?? Gender.other
-        location = Location(dict: dict["location"] as! Dictionary<String, Any?>)
-        email = dict["email"] as? String ?? ""
-        dob = DOB(dict: dict["dob"] as! Dictionary<String, Any?>)
-        phoneNo = dict["phone"] as? String ?? ""
-        cellNo = dict["cell"] as? String ?? ""
-        profilePic = ProfilePicture(dict: dict["picture"] as! Dictionary<String, String>)
+        case profilePic
+        case profilePicLarge
     }
      */
+   
+  
 }

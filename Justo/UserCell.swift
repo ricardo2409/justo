@@ -16,19 +16,20 @@ class UserCell: UITableViewCell {
         didSet{
             if let user = user {
                 
-                // let url = URL(string: user.picture["medium"])
-                // userImage.kf.setImage(with: URL)
+                let url = URL(string: user.profilePicThumbnail)
+                userImage.kf.setImage(with: url)
                 nameLabel.text = user.name
                 emailLabel.text = user.email
-                phoneLabel.text = user.email
-                userImage.image = UIImage(systemName: "User")
+                phoneLabel.text = user.phoneNo
+                print("Esto es lo que recibo:")
+                print(user)
             }
         }
     }
     
     private let nameLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .systemBackground
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
@@ -36,7 +37,7 @@ class UserCell: UITableViewCell {
     
     private let emailLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .systemBackground
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
@@ -44,7 +45,7 @@ class UserCell: UITableViewCell {
     
     private let phoneLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .systemBackground
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
@@ -80,7 +81,7 @@ class UserCell: UITableViewCell {
         
         stackView.snp.makeConstraints({ make in
             make.top.bottom.right.equalToSuperview()
-            make.left.equalTo(userImage)
+            make.left.equalTo(userImage.snp.right)
         })
     }
     
