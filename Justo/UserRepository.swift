@@ -16,23 +16,11 @@ class UserRepository {
 
         let URL = "https://randomuser.me/api/"
 
-        AF.request(URL, method: .get).validate().responseJSON { response in
+        AF.request(URL, method: .get).validate(statusCode: 200..<600).responseJSON { response in
             switch response.result {
             case.success(let value):
                 let json = JSON(value)
                 //Create User
-                print("Name: \(json["results"][0]["name"]["title"]) \(json["results"][0]["name"]["first"]) \(json["results"][0]["name"]["last"])")
-                print("Gender: \(json["results"][0]["gender"])")
-                print("Latitude: \(json["results"][0]["location"]["coordinates"]["latitude"])")
-                print("Longitude: \(json["results"][0]["location"]["coordinates"]["longitude"])")
-                print("Email: \(json["results"][0]["email"])")
-                print("DOB: \(json["results"][0]["dob"]["date"])")
-                print("Age: \(json["results"][0]["dob"]["age"])")
-                print("Phone: \(json["results"][0]["phone"])")
-                print("Cell: \(json["results"][0]["cell"])")
-                print("Thumbnail: \(json["results"][0]["picture"]["thumbnail"])")
-                print("Large: \(json["results"][0]["picture"]["large"])")
-
                 let title = json["results"][0]["name"]["title"].rawValue as! String
                 let first = json["results"][0]["name"]["first"].rawValue as! String
                 let last = json["results"][0]["name"]["last"].rawValue as! String
@@ -45,9 +33,8 @@ class UserRepository {
                 let age = String(json["results"][0]["dob"]["age"].rawValue as! Int)
                 let phone = json["results"][0]["phone"].rawValue as! String
                 let cell = json["results"][0]["cell"].rawValue as! String
-                let thumbnail = json["results"][0]["picture"]["thumbnail"].rawValue as! String
+                let thumbnail = json["results"][0]["picture"]["medium"].rawValue as! String
                 let large = json["results"][0]["picture"]["large"].rawValue as! String
-                
                 let user = User(name: name, gender: gender, latitude: latitude, longitude: longitude, email: email, dob: dob, age: age, phoneNo: phone, cellNo: cell, profilePicThumbnail: thumbnail, profilePicLarge: large)
                
                 completion(user)

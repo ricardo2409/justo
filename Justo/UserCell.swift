@@ -18,9 +18,9 @@ class UserCell: UITableViewCell {
                 
                 let url = URL(string: user.profilePicThumbnail)
                 userImage.kf.setImage(with: url)
-                nameLabel.text = user.name
-                emailLabel.text = user.email
-                phoneLabel.text = user.phoneNo
+                nameLabel.text = "Name: \(user.name)"
+                emailLabel.text = "Email: \(user.email)"
+                phoneLabel.text = "Phone: \(user.phoneNo)"
                 print("Esto es lo que recibo:")
                 print(user)
             }
@@ -29,24 +29,22 @@ class UserCell: UITableViewCell {
     
     private let nameLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
     }()
     
     private let emailLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     
     private let phoneLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
     }()
@@ -54,6 +52,7 @@ class UserCell: UITableViewCell {
     private let userImage : UIImageView = {
         let imageView = UIImageView(image: nil)
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 50.0
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -61,7 +60,6 @@ class UserCell: UITableViewCell {
     lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        //stack.spacing = 10.0
         stack.alignment = .fill
         stack.distribution = .fillEqually
         [nameLabel, emailLabel, phoneLabel].forEach { stack.addArrangedSubview($0) }
@@ -76,12 +74,12 @@ class UserCell: UITableViewCell {
         //Image and Stackview Constraints
         userImage.snp.makeConstraints({ make in
             make.top.left.bottom.equalToSuperview()
-            make.width.equalTo(50)
+            make.width.equalTo(100)
         })
         
         stackView.snp.makeConstraints({ make in
             make.top.bottom.right.equalToSuperview()
-            make.left.equalTo(userImage.snp.right)
+            make.left.equalTo(userImage.snp.right).offset(30.0)
         })
     }
     
