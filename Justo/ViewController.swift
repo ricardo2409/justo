@@ -19,39 +19,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        tableView.register(UserCell.self, forCellReuseIdentifier: "cell")
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.snp.makeConstraints { make in
+        self.tableView.register(UserCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        //self.tableView.isEditing = true
+        self.tableView.snp.makeConstraints { make in
             make.center.width.equalToSuperview()
             make.top.equalTo(view.safeArea.top)
         }
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh")
-        refreshControl.tintColor = UIColor(.blue)
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl)
-        fetchInfo(numberOfUsers)
-        print("Ya estoy fuera del loooooop")
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh")
+        self.refreshControl.tintColor = UIColor(.blue)
+        self.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+        self.fetchInfo(numberOfUsers)
     }
     
     func fetchInfo(_ numberOfUsers: Int) {
         for _ in 0..<numberOfUsers {
             viewModel.fetchUsers { [weak self] user in
-                print("This is user:")
-                print(user)
                 guard let strongSelf = self else { return }
-                print(strongSelf.usersArray.count)
                 strongSelf.displayUser(user)
             }
         }
-        print("Ya estoy fuera del loop")
-        
     }
     
     func displayUser(_ user: User) {
         self.usersArray.append(user)
         self.tableView.reloadData()
-        
     }
     
     @objc func refresh(_ sender: AnyObject) {
@@ -83,10 +77,22 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Did select")
         let controller = InfoView(user: usersArray[indexPath.row])
         show(controller, sender: Any?.self)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            self.usersArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
     
 }
 

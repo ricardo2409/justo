@@ -78,7 +78,8 @@ class UserCell: UITableViewCell {
         })
         
         stackView.snp.makeConstraints({ make in
-            make.top.bottom.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.right.equalToSuperview().offset(60.0)
             make.left.equalTo(userImage.snp.right).offset(30.0)
         })
     }
