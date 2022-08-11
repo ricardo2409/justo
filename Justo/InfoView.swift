@@ -39,7 +39,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Name: \(userInfo.name)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -49,7 +48,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Gender: \(userInfo.gender)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -59,7 +57,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Email: \(userInfo.email)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -68,9 +65,7 @@ class InfoView : UIViewController {
         
         let _: UILabel = {
             let label = UILabel()
-            //////
             label.text = "Country: \(userInfo.country)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -80,7 +75,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Age: \(userInfo.age)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -90,7 +84,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Phone: \(userInfo.phoneNo)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
@@ -100,7 +93,6 @@ class InfoView : UIViewController {
         let _: UILabel = {
             let label = UILabel()
             label.text = "Cell: \(userInfo.cellNo)"
-            label.textColor = .black
             label.font = .systemFont(ofSize: 16)
             label.textAlignment = .left
             stackView.addArrangedSubview(label)
