@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let tableView = UITableView()
     var usersArray = [User]()
     let viewModel = ViewModel()
-    let numberOfUsers = 6
+    let numberOfUsers = 4
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        print("refresh")
         self.usersArray.removeAll()
         self.fetchInfo(numberOfUsers)
         self.refreshControl.endRefreshing()
@@ -77,7 +76,6 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did select")
         let controller = InfoView(user: usersArray[indexPath.row])
         show(controller, sender: Any?.self)
     }
@@ -85,6 +83,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()

@@ -73,20 +73,52 @@
 		19ACC92428A411820085EF80 /* Justo */ = {
 			isa = PBXGroup;
 			children = (
+				19ACC93328A411860085EF80 /* Info.plist */,
+				19ACC94828A6B97A0085EF80 /* Resources */,
+				19ACC94728A6B93F0085EF80 /* ViewModel */,
+				19ACC94628A6B9330085EF80 /* Views */,
+				19ACC94528A6B9260085EF80 /* Models */,
+			);
+			path = Justo;
+			sourceTree = "<group>";
+		};
+		19ACC94528A6B9260085EF80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				19ACC93B28A41A980085EF80 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		19ACC94628A6B9330085EF80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19ACC92E28A411860085EF80 /* Assets.xcassets */,
+				19ACC94328A56FD10085EF80 /* InfoView.swift */,
+				19ACC93928A418690085EF80 /* UserCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19ACC94728A6B93F0085EF80 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				19ACC93D28A41C4D0085EF80 /* UserRepository.swift */,
+				19ACC93F28A41CD30085EF80 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		19ACC94828A6B97A0085EF80 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				19ACC92528A411820085EF80 /* AppDelegate.swift */,
 				19ACC92728A411820085EF80 /* SceneDelegate.swift */,
 				19ACC92928A411820085EF80 /* ViewController.swift */,
 				19ACC92B28A411820085EF80 /* Main.storyboard */,
-				19ACC92E28A411860085EF80 /* Assets.xcassets */,
 				19ACC93028A411860085EF80 /* LaunchScreen.storyboard */,
-				19ACC93328A411860085EF80 /* Info.plist */,
-				19ACC93928A418690085EF80 /* UserCell.swift */,
-				19ACC93B28A41A980085EF80 /* User.swift */,
-				19ACC93D28A41C4D0085EF80 /* UserRepository.swift */,
-				19ACC93F28A41CD30085EF80 /* ViewModel.swift */,
-				19ACC94328A56FD10085EF80 /* InfoView.swift */,
 			);
-			path = Justo;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9DCC04100A534AA548A8A89B /* Pods */ = {
